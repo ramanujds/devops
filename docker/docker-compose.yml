@@ -19,7 +19,7 @@ services:
       - mysql_data:/var/lib/mysql
 
   user-service:
-    image: ram1uj/notes-app-notes-service
+    image: ram1uj/notes-app-user-service
 #    container_name: user-service
     restart: always
     environment:
