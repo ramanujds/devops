@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: user-service
   name: user-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - name: "8200"
       port: 8200

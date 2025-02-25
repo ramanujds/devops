@@ -20,6 +20,18 @@ install kubectl
 sudo snap install kubectl --classic
 
 
+SSH Tunnel
+
+http://192.168.49.2:32748
+
+
+ssh -i [private_key.pem] -L [local_port]:localhost:[remote_port] [username]@[remote_host]
+
+
+
+ssh -i "k8s-ec2-key.pem" -L 8080:192.168.49.2:32748 ubuntu@ec2-18-212-221-86.compute-1.amazonaws.com
+
+
 
 
 
