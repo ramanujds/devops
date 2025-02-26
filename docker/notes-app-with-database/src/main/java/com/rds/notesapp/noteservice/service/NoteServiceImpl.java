@@ -67,6 +67,6 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     public List<Note> findByUserId(long userId) {
-        return noteRepository.findByUserId(userId);
+        return null;
     }
 }

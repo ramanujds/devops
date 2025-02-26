@@ -3,6 +3,9 @@ name: 'notes-app'
 networks:
   app-network:
 
+volumes:
+  mysql_data:
+
 services:
   mysql:
     image: mysql:latest
@@ -50,5 +53,3 @@ services:
     networks:
       - app-network
 
-volumes:
-  mysql_data:
