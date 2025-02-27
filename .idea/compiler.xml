@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="notes-service (1)" />
         <module name="notes-service" />
         <module name="hello-world" />
       </profile>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="hello-world" options="-parameters" />
       <module name="notes-service" options="-parameters" />
+      <module name="notes-service (1)" options="-parameters" />
     </option>
   </component>
 </project>

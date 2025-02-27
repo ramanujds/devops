@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/docker/notes-app-with-database/pom.xml" />
         <option value="$PROJECT_DIR$/docker/hello-world/pom.xml" />
+        <option value="$PROJECT_DIR$/kubernetes/app/notes-service/pom.xml" />
       </list>
     </option>
   </component>

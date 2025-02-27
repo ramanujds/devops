@@ -17,12 +17,24 @@ spec:
           image: ram1uj/notes-app-user-service
           env:
             - name: DB_HOST
-              value: mysql
+              valueFrom:
+                configMapKeyRef:
+                  name: notes-app-config
+                  key: DB_HOST
             - name: DB_NAME
-              value: notes_db
+              valueFrom:
+                configMapKeyRef:
+                    name: notes-app-config
+                    key: DB_NAME
             - name: DB_USER
-              value: root
+              valueFrom:
+                secretKeyRef:
+                    name: notes-app-secrets
+                    key: DB_USER
             - name: DB_PASSWORD
-              value: password
+              valueFrom:
+                  secretKeyRef:
+                      name: notes-app-secrets
+                      key: DB_PASSWORD
           ports:
             - containerPort: 8200
