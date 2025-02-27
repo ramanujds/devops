@@ -3,6 +3,9 @@ name: 'notes-app'
 networks:
   app-network:
 
+volumes:
+  mysql_data:
+
 services:
   mysql:
     image: mysql:latest
@@ -12,7 +15,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: notes_db
     ports:
-      - "3307:3306"
+      - "3306:3306"
     networks:
       - app-network
     volumes:
@@ -50,5 +53,3 @@ services:
     networks:
       - app-network
 
-volumes:
-  mysql_data:
