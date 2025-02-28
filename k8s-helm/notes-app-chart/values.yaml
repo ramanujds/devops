@@ -1,0 +1,26 @@
+replicaCount: 1
+
+mysql:
+  image: mysql:latest
+  servicePort: 3306
+  env:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_DATABASE: notes_db
+
+userService:
+  image: ram1uj/notes-app-user-service
+  servicePort: 8200
+  env:
+    DB_HOST: mysql
+    DB_NAME: notes_db
+    DB_USER: root
+    DB_PASSWORD: password
+
+notesService:
+  image: ram1uj/notes-app-notes-service
+  servicePort: 8100
+  env:
+    DB_HOST: mysql
+    DB_NAME: notes_db
+    DB_USER: root
+    DB_PASSWORD: password

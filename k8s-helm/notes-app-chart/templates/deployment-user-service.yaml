@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+        - name: user-service
+          image: "{{ .Values.userService.image }}"
+          ports:
+            - containerPort: {{ .Values.userService.servicePort }}
+          env:
+            - name: DB_HOST
+              value: "{{ .Values.userService.env.DB_HOST }}"
+            - name: DB_NAME
+              value: "{{ .Values.userService.env.DB_NAME }}"
+            - name: DB_USER
+              value: "{{ .Values.userService.env.DB_USER }}"
+            - name: DB_PASSWORD
+              value: "{{ .Values.userService.env.DB_PASSWORD }}"

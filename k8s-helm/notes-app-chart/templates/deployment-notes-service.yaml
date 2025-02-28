@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notes-service
+  template:
+    metadata:
+      labels:
+        app: notes-service
+    spec:
+      containers:
+        - name: notes-service
+          image: "{{ .Values.notesService.image }}"
+          ports:
+            - containerPort: {{ .Values.notesService.servicePort }}
+          env:
+            - name: DB_HOST
+              value: "{{ .Values.notesService.env.DB_HOST }}"
+            - name: DB_NAME
+              value: "{{ .Values.notesService.env.DB_NAME }}"
+            - name: DB_USER
+              value: "{{ .Values.notesService.env.DB_USER }}"
+            - name: DB_PASSWORD
+              value: "{{ .Values.notesService.env.DB_PASSWORD }}"

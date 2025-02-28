@@ -1,0 +1,21 @@
+replicaCount: 2
+
+image:
+  repository: ram1uj/easy-recipes
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: []
