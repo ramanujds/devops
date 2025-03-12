@@ -39,15 +39,15 @@ spec:
           ports:
             - containerPort: 8200
 
-      initContainers:
-        - name: init-mysql-test
-          image: mysql:latest
-          env:
-              - name: MYSQL_ROOT_PASSWORD
-                value: password
-              - name: MYSQL_DATABASE
-                valueFrom:
-                    configMapKeyRef:
-                      name: notes-app-config
-                      key: DB_NAME
-          command: ['sh', '-c', 'echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE" | mysql -h mysql-service -P 3306 -u root -p$MYSQL_ROOT_PASSWORD']
+#      initContainers:
+#        - name: init-mysql-test
+#          image: mysql:latest
+#          env:
+#              - name: MYSQL_ROOT_PASSWORD
+#                value: password
+#              - name: MYSQL_DATABASE
+#                valueFrom:
+#                    configMapKeyRef:
+#                      name: notes-app-config
+#                      key: DB_NAME
+#          command: ['sh', '-c', 'echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE" | mysql -h mysql-service -P 3306 -u root -p$MYSQL_ROOT_PASSWORD']
