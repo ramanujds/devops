@@ -5,7 +5,7 @@ image:
   pullPolicy: IfNotPresent
 
 service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 80
     selector:
         app: easy-recipes
