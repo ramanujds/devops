@@ -91,7 +91,18 @@ docker run -p 3000:80 --name easy-recipes -d --network=app-network ram1uj/easy-r
 
 
 
+How to push an image to docker hub
 
+You need to have a dockerhub account
+login to your account
+
+docker login
+
+tag image with your dockerhub id
+
+docker tag my-spring-boot-app:0.0.1-SNAPSHOT ram1uj/my-spring-boot-app:0.0.1-SNAPSHOT
+
+docker push ram1uj/my-spring-boot-app:0.0.1-SNAPSHOT
 
 
 
