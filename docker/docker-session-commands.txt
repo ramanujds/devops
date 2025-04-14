@@ -1,0 +1,100 @@
+Docker Commands Cheat Sheet
+Table of Contents
+Image Management
+Container Lifecycle
+Networking
+Interacting with Containers
+Cleaning Up Docker Resources
+Logs and Monitoring
+Miscellaneous
+
+⸻
+Image Management
+Pull an Image:
+docker pull ram1uj/spring-boot-app
+docker pull ram1uj/hello-world
+
+List All Images:
+docker images
+
+Delete an Image:
+docker rmi <image-name>
+
+Remove All Unused Images:
+docker image prune -a
+
+Container Lifecycle
+Run a New Container:
+docker run -p 3000:80 --name easy-recipes -d --network=app-network ram1uj/easy-recipes
+docker run -p 5000:5000 --name spring-boot-app -d ram1uj/spring-boot-app
+docker run -p 5000:5000 --name hello-world -d --network=app-network ram1uj/hello-world
+
+List All Containers (Running & Stopped):
+docker ps -a
+
+List Running Containers:
+docker ps
+
+Stop a Container:
+docker stop <container-name>
+
+Start a Stopped Container:
+docker start <container-name>
+
+Delete a Container:
+docker rm <container-name>
+
+Networking
+Create a Network:
+docker network create app-network
+
+Remove All Networks:
+docker network prune
+
+Interacting with Containers
+Access a Running Container (Bash Shell):
+docker exec -it easy-recipes bash
+docker exec -it <container-name> bash
+
+Test Connectivity Using curl:
+curl hello-world:5000
+
+Cleaning Up Docker Resources
+Remove All Stopped Containers:
+docker container prune
+
+Remove All Unused Images:
+docker image prune -a
+
+Remove All Networks:
+docker network prune
+
+Remove Everything (Containers, Networks, Images, etc.):
+docker system prune -a
+
+Logs and Monitoring
+View Logs of a Container:
+docker logs <container-name>
+
+Follow Real-Time Logs:
+docker logs -f <container-name>
+
+Monitor Container Resource Usage:
+docker stats
+
+Miscellaneous
+Re-run Easy Recipes Container:
+docker run -p 3000:80 --name easy-recipes -d --network=app-network ram1uj/easy-recipes
+
+
+
+
+
+
+
+
+
+
+
+
+
