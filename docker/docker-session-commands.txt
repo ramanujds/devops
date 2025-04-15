@@ -107,5 +107,8 @@ docker push ram1uj/my-spring-boot-app:0.0.1-SNAPSHOT
 
 
 
-
+Namespaces -
+PID Namespace : Process Isolation
+Network Namespace : Network Isolation
+Mount Namespace : Filesystem Isolation
 
