@@ -4,7 +4,7 @@ metadata:
   name: spring-boot-app
 
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: spring-boot-app
@@ -15,6 +15,17 @@ spec:
     spec:
       containers:
         - name: spring-boot-app-container
-          image: ram1uj/spring-boot-app
+          image: ram1uj/my-spring-boot-app
+          env:
+            - name: MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-boot-app-config
+                  key: MESSAGE
+            - name: SECRET_MESSAGE
+              valueFrom:
+                secretKeyRef:
+                  key: SECRET_MESSAGE
+                  name: spring-boot-app-secrets
           ports:
-            - containerPort: 5000
+            - containerPort: 8080
