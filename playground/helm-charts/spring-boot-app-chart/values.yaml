@@ -1,0 +1,17 @@
+replicaCount: 1
+image:
+  repository: ram1uj/my-spring-boot-app
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: NodePort
+  port: 8080
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
