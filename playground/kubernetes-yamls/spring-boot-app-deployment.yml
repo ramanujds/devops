@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spring-boot-app
+#  namespace: dev
 
 spec:
   replicas: 2
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
         - name: spring-boot-app-container
-          image: ram1uj/my-spring-boot-app
+          image: ram1uj/spring-boot-app
           env:
             - name: MESSAGE
               valueFrom:
@@ -28,4 +29,4 @@ spec:
                   key: SECRET_MESSAGE
                   name: spring-boot-app-secrets
           ports:
-            - containerPort: 8080
+            - containerPort: 5000
